@@ -3,7 +3,7 @@
 
 ![image](https://github.com/SeokJuGo/SSAFY_TIL/assets/116260619/ad19ecce-b674-4813-85b0-27ee3f4aab35)
 
-
+ 
 ## 🚟 진행 상황
 
 |     달      |     주차     |     작업 내용      | 완료 여부 |
