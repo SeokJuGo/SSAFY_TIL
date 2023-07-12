@@ -18,9 +18,10 @@
   7. 배열
   8. 이중배열
   9. 생성자
-  10. 은닉화
-  11. 오버로딩
-  12. this
-  13. 객체생성
-  14. Scanner
-  15. StringBuilder
+  10. super()
+  11. 은닉화
+  12. 오버로딩
+  13. this
+  14. 객체생성
+  15. Scanner
+  16. StringBuilder
