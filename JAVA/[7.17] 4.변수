@@ -1,0 +1,92 @@
+# 변수
+- 자료를 저장하기 위한 메모리공간(타입에 따른 크기)
+
+## 목차
+
+1. [JVM 메모리 방식](#1-jvm-메모리-방식)
+2. [Shallow Copy vs Deep Copy](#2-shallow-copy-vs-deep-copy)
+3. [Short Circuit](#3-short-circuit)
+4. [2차원 배열을 1차원 배열로 변환](#4-2차원-배열을-1차원-배열로-변환)
+5. [메모리 특징](#5-메모리-특징)
+6. [다형성 발생원리](#6-다형성-발생원리)
+7. [오버라이딩과 오버로딩 비교](#7-오버라이딩과-오버로딩-비교)
+8. [Member Field와 Object 속성](#8-member-field와-object-속성)
+
+---
+
+## 1.타입
+### 1) 기본형 (only data)
+- 크기가 정해짐
+![image](https://github.com/SeokJuGo/SeokJuGo/assets/116260619/b92a3900-7c96-48b5-b923-eda89252fcda)
+- 기본형은 8개
+- 앞 자리는 부호
+- 타입의 기본형을 초과하거나, 미만일 때F,L붙이기
+- 실수 연산은 부정확하다.
+```
+BigDecimal b1 = new BigDecimal("2.0")
+BigDecimal b2 = new BigDecimal("1.0")
+b1.subtract(b2) // 객체를 활용
+```
+#### 🎤 Over Flow(정수 계산 시)
+- 쓰레기 값(에러가 아니다)
+```java
+int a = Integer.MAX_VALUE;
+System.out.println(a+1)
+```
+### 2) 참조형 (속성,기능)
+- 크기 정해지지x (주소만 저장)
+
+#### 🎤 Wrapper Class
+- 객체형, 부가적인인 정보(기능)를 줄 수 있다.
+
+## 2. 형변환
+
+- 기본형↔기본형,참조형↔참조형 wrapper claas로 변환 가능(boolean은 다른 형 x)
+- 묵시적(작큰)생략, 명시적(큰작)
+```java
+double d = 100.5;
+int result = (int)d;
+d? // 유의 1
+```
+```java
+int  i=10;
+byte b=i ?// 유의 2 형변환은 값변환이아니다!
+```
+![image](https://github.com/SeokJuGo/SeokJuGo/assets/116260619/d4937d5c-2959-49ed-bb49-2dba78b52f8b)
+- 빨간줄 이유?
+```java
+long l1 = l1 + 1;
+System.out.println(l1);  // ?
+
+long l2 = (long) (l1 + 1);
+System.out.println(l2);  // ?
+
+long l3 = (long) l1 + 1;
+System.out.println(l2);  // ?
+```
+```java
+byte b1 =10;
+byte b2 = 20;
+byte b3 = b1 + b2 //?
+
+int i1 = 10;
+long l1 = 20;
+int i2 = i1 + l1; //? 두 가지
+
+float f1 = 10.0;
+float f2 = f1 + 20.0; // ? 두 가지
+```
+#### 🎤 short circuit
+- 앞의 조건을 확인 후 뒤의 조건을 확인 안하는 것 && ||
+#### 🎤  check
+![image](https://github.com/SeokJuGo/SeokJuGo/assets/116260619/abd5ddaf-915d-4343-b40c-3ad9777fd80a)
+- 1개와 4개
+#### 🎤 switch-case
+```java
+		switch(num) {
+		case 1:
+			System.out.println(1);
+		default :
+			System.out.println(10); // ?
+		}
+```
