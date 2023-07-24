@@ -11,7 +11,8 @@
 |             |     18   | Abstract,JVM,Method        |    [✔️]    |
 |             |     19   | 상속, 오버라이딩, 제한자       |    [✔️]    |
 |             |     20   | 은닉화,싱글톤,다형성,객체형변환,바인딩       |    [✔️]    |
-|             |     21   | Abstract클래스,Interface,Generic.md       |  [✔️]      |
+|             |     21   | Abstract클래스,Interface,Generic       |  [✔️]      |
+|             |     24   | Exception,Throws       |  [✔️]      |
 |   2023년 8월 |             |                    |           |
 |             |     주차 5   | 작업 내용 4        |    [ ]    |
 |             |     주차 6   | 작업 내용 5        |    [ ]    |
