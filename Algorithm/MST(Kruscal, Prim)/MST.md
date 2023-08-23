@@ -19,7 +19,7 @@
 
 kruscal, prim 정점중심 -간선리스트 
 
-- 간선이 적으면 크루스칼 알고리즘을 사용
+- **간**선이 **적**으면 **크**루스칼 알고리즘을 사용
 
 ## 2) 순서
 
@@ -54,7 +54,7 @@ kruscal, prim 정점중심 -간선리스트
 
 # Prim
 
-- 간선이 많으면 프림알고리즘을 사용 => V(V-1)/2 
+- **간**선이 **많**으면 **프**림알고리즘을 사용 => V(V-1)/2 
 
 ## 1) 순서
 
@@ -62,5 +62,24 @@ kruscal, prim 정점중심 -간선리스트
 1) 임의 정점 하나 선택
 2) 선택한 정점과 인접하는 정점 중 최소 비용 정점 선택
 3) 모든 정점 선택까지 1. 2. 반복
+```
+
+```java
+		min = 0L;
+		boolean[] visited = new boolean[V+1];   
+
+		points.offer(new Edge(1,0)); 
+		int cnt=0;
+		while(!points.isEmpty()) {
+            // 1) 임의 접점 시작
+			Edge edge=points.poll();
+			if(visited[edge.v]) continue;
+			min+=edge.w;
+			visited[edge.v]=true;
+			if(++cnt==V) return min; // V-1 모두 찾으면
+			for (int i = 0; i < adj[edge.v].size(); i++) {
+				Edge next=adj[edge.v].get(i);
+				if(visited[next.v]) continue;
+				points.offer(next);
 ```
 
